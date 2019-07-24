@@ -12,11 +12,25 @@ var savedArticlesSchema = new Schema({
         type: String,
         required: true
     },
+    preview: {
+        type: String,
+      },
+    
+      publishedBy: {
+        type: String,
+      },
+      datePublished:{
+        type: String,
+      },
+      picture:{
+        type: String,
+        required: true
+      },
 
-    note:{
-        type: Schema.Types.ObjectId,
-        ref: "Note"
-    }
+    note:
+        {type: Schema.ObjectId, 
+        ref: "Note"}
+    
 
 });
 

@@ -1,54 +1,66 @@
 // Grab the articles as a json
 getArticles();
-function getArticles(){
+
+function getArticles() {
   $("#articles").empty();
-$.getJSON("/articles", function(data) {
-  
-  // For each one
-  for (var i = 0; i < data.length; i++) {
-    console.log(data[i]._id);
-    // Display the apropos information on the page
-    $("#articles").append(
-     ` <div class = "container">
+  $.getJSON("/articles", function (data) {
+
+    // For each one
+    for (var i = 0; i < data.length; i++) {
+      console.log(data[i]._id);
+      // Display the apropos information on the page
+      $("#articles").append(
+        ` <div class = "container">
         <div class="card articleFeed" data-id = "${data[i]._id}">
-  <h5 class="card-header" >${data[i].title}</h5>
-  <div class="card-body" data-id = "${data[i]._id}">
-    <a class="card-text" href="${data[i].link}" target = "_blank"> ${data[i].link}</a><br/>
-    <button class= "saveButton btn btn-primary"> Save </button>
+        <h5 class="card-header" >${data[i].title}</h5>
+        <div class="card-body" data-id = "${data[i]._id}">
+        <div class = "row"> 
+        <a class= "col-md-3"  href="${data[i].link}" target = "_blank"> 
+        <img class="thumbnail" src = "${data[i].picture}" href="${data[i].link}">
+        </a> 
+        <div class ="col-md-9">
+      <a  card-text" href="${data[i].link}" target = "_blank">${data[i].preview}</a>
+      <br/>
+      <button class= "saveButton btn btn-primary" data-id="${data[i]._id}"> Save </button>
+      </div>
+      </div>
+    
+   
+    <p class ="publishedData">${data[i].publishedBy} ${data[i].datePublished}</p>
   </div>
 </div>
 </div>`
-    )
+      )
 
-  }
-  $("#loadMe").modal("hide");
-  
-});
+    }
+    $("#loadMe").modal("hide");
+
+  });
 }
 
-$(document).on("click", ".saveButton", function(){
-  
-  var thisId = $(this).parent().attr("data-id");
+$(document).on("click", ".saveButton", function () {
+
+  var thisId = $(this).attr("data-id");
   $.ajax({
-    method: "POST",
-    url: "/savedArticles/"+ thisId
-  })
-  .then(function(data){
-    console.log(data);
-  })
+      method: "POST",
+      url: "/savedArticles/" + thisId
+    })
+    .then(function (data) {
+      console.log(data);
+    })
 })
 
 
-$("#just_load_please").on("click", function(e) {
+$("#just_load_please").on("click", function (e) {
   e.preventDefault();
- 
-  setTimeout(function() {
-    
+
+  setTimeout(function () {
+
   }, 3500);
 });
 
-$(document).on("click", "#scrapeCurrent", function(){
-   $("#loadMe").modal({
+$(document).on("click", "#scrapeCurrent", function () {
+  $("#loadMe").modal({
     backdrop: "static", //remove ability to close modal with click
     keyboard: false, //remove option to close with keyboard
     show: true //Display loader!
@@ -57,25 +69,25 @@ $(document).on("click", "#scrapeCurrent", function(){
   $.ajax({
     type: "GET",
     url: "/scrape/"
-  }).then(function(data){
+  }).then(function (data) {
     console.log(data);
     getArticles();
 
   })
-} )
+})
 
 
-$(document).on("click", "#clearCurrent", function(){
+$(document).on("click", "#clearCurrent", function () {
 
- 
+
   $.ajax({
     type: "DELETE",
     url: "/deleteAllArticles/"
-  }).then(function(data){
+  }).then(function (data) {
     console.log(data);
     console.log("deleted data")
-   
+
     location.reload();
-    
-    })
+
+  })
 })

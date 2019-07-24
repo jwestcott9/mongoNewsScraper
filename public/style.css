@@ -13,8 +13,15 @@
 .bottomBorder{
     border-bottom: .25px solid black;
 }
-.delete-button{
+.noteOptions{
     margin-bottom: 5px;
+}
+
+.thumbnail{
+  margin: 10px;
+  float: left;
+  height: 90%;
+  width: 90%;
 }
 
 .banner{
@@ -91,4 +98,10 @@
     opacity: 0.75;
   }
   
-  
+
+  body{
+    background: rgb(190, 190, 197);
+  }
+.myNav{
+  color: rgb(64, 66, 66);
+}
