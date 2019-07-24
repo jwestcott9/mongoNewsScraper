@@ -17,6 +17,9 @@ var PORT = 8000;
 var app = express();
 
 require("./routes/htmlRoutes")(app);
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds253567.mlab.com:53567/heroku_vphmbb5p";
+
+mongoose.connect(MONGODB_URI);
 
 // Configure middleware
 
