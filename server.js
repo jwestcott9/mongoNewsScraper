@@ -11,13 +11,13 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
-var PORT = 8000;
+var PORT = process.env.PORT || 8000;
 
 // Initialize Express
 var app = express();
 
 require("./routes/htmlRoutes")(app);
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds253567.mlab.com:53567/heroku_vphmbb5p";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
 mongoose.connect(MONGODB_URI);
 

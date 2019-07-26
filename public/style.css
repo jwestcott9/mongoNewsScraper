@@ -1,107 +1,112 @@
-.hide{
-    display: none;
+.hide {
+  display: none;
 }
 
 
-.commentInput{
-    width: 100%;
-    height: 100px;
-}
-.topBorder{
-    border-top: .25px solid black ;
-}
-.bottomBorder{
-    border-bottom: .25px solid black;
-}
-.noteOptions{
-    margin-bottom: 5px;
+.commentInput {
+  width: 100%;
+  height: 100px;
 }
 
-.thumbnail{
+.topBorder {
+  border-top: .25px solid black;
+}
+
+.bottomBorder {
+  border-bottom: .25px solid black;
+}
+
+.noteOptions {
+  margin-bottom: 5px;
+}
+
+.thumbnail {
   margin: 10px;
   float: left;
   height: 90%;
   width: 90%;
 }
 
-.banner{
-    text-align: center;
-    background-image: url("https://isme.ie/wp-content/uploads/2018/07/banner_add_news.jpg");
-    background-size: 100%;
-    background-blend-mode: lighten 10%;
-    opacity: .75;
-    height: 500px;
-    color: white;
+.banner {
+  text-align: center;
+  background-image: url("https://isme.ie/wp-content/uploads/2018/07/banner_add_news.jpg");
+  background-size: 100%;
+  background-blend-mode: lighten 10%;
+  opacity: .75;
+  height: 500px;
+  color: white;
 }
 
-.articleFeed{
-    margin-bottom: 10px;
-    margin-top: 10px
+.articleFeed {
+  margin-bottom: 10px;
+  margin-top: 10px
 }
 
-.savedArticlesHeader{
-    background-image: url("https://backgroundcheckall.com/wp-content/uploads/2017/12/jumbotron-background-image.gif")
-}
-.bannerHeading{
-    font-size: 50pt;
-    margin-top: 100px;
+.savedArticlesHeader {
+  background-image: url("https://backgroundcheckall.com/wp-content/uploads/2017/12/jumbotron-background-image.gif")
 }
 
+.bannerHeading {
+  font-size: 50pt;
+  margin-top: 100px;
+}
 
-.itemTitle{
-    border-bottom: .5px solid black;
-    
-}   
 
-.itemContainer{
-    background: lightgrey;
-    margin-bottom: 10px;
-    padding: 10px;
+.itemTitle {
+  border-bottom: .5px solid black;
+
+}
+
+.itemContainer {
+  background: lightgrey;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 
 .loader {
-    position: relative;
-    text-align: center;
-    margin: 15px auto 35px auto;
-    z-index: 9999;
-    display: block;
-    width: 80px;
-    height: 80px;
-    border: 10px solid rgba(0, 0, 0, .3);
-    border-radius: 50%;
-    border-top-color: #000;
-    animation: spin 1s ease-in-out infinite;
-    -webkit-animation: spin 1s ease-in-out infinite;
+  position: relative;
+  text-align: center;
+  margin: 15px auto 35px auto;
+  z-index: 9999;
+  display: block;
+  width: 80px;
+  height: 80px;
+  border: 10px solid rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  border-top-color: #000;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
   }
-  
-  @keyframes spin {
-    to {
-      -webkit-transform: rotate(360deg);
-    }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
   }
-  
-  @-webkit-keyframes spin {
-    to {
-      -webkit-transform: rotate(360deg);
-    }
-  }
-  
-  
+}
+
+
 
 .modal-content {
-    border-radius: 0px;
-    box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.7);
-  }
-  
-  .modal-backdrop.show {
-    opacity: 0.75;
-  }
-  
+  border-radius: 0px;
+  box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.7);
+}
 
-  body{
-    background: rgb(190, 190, 197);
-  }
-.myNav{
+.modal-backdrop.show {
+  opacity: 0.75;
+}
+
+
+body {
+  background: rgb(190, 190, 197);
+}
+
+.myNav {
   color: rgb(64, 66, 66);
 }
