@@ -12,11 +12,11 @@ $.getJSON("/getSavedArticles", function (data) {
       <a class= "col-md-3"  href="${data[i].link}" target = "_blank"> 
       <img class="thumbnail" src = "${data[i].picture}" href="${data[i].link}">
       </a> 
-      <div class ="col-md-9">
+      <div class ="col-md-9"> 
     <a  card-text" href="${data[i].link}" target = "_blank">${data[i].preview}</a>
     <br/>
     <button  class="btn btn-primary commentButton" data-id="${data[i]._id}"  data-toggle = "modal" data-target="#exampleModalLong">Article Notes</button>
-<button class = "deleteArticle btn btn-danger" > Delete </button>
+<button class = "deleteArticle btn btn-danger" data-id= "${data[i]._id}" > Delete </button>
     </div>
     </div>  
  
@@ -66,7 +66,7 @@ $(document).on("click", "#clearSaved", function () {
 })
 // this provides functionality to the delete a specific article button
 $(document).on("click", ".deleteArticle", function () {
-  let thisId = $(this).parent().attr("data-id");
+  let thisId = $(this).attr("data-id");
 
   $.ajax({
     type: "DELETE",

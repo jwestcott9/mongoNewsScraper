@@ -51,13 +51,6 @@ $(document).on("click", ".saveButton", function () {
 })
 
 
-$("#just_load_please").on("click", function (e) {
-  e.preventDefault();
-
-  setTimeout(function () {
-
-  }, 3500);
-});
 
 $(document).on("click", "#scrapeCurrent", function () {
   $("#loadMe").modal({

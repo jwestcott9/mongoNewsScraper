@@ -280,9 +280,11 @@ app.delete("/deleteSaved/:id", function (req, res) {
       _id: req.params.id
     })
     .then(function (dbArticle) {
+      console.log("hit the then")
       res.json(dbArticle);
     })
     .catch(function (err) {
+      console.log(err)
       res.json(err);
     })
 })
